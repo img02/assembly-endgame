@@ -40,7 +40,7 @@ function App() {
 
         {gameStatus !== "playing" ? <Status gameStatus={gameStatus} /> : null}
         <Lives />
-        <WordToGuess letters={word.split("")} />
+        <WordToGuess letters={word.split("")} usedLetters={usedLetters} />
         <Keyboard
           alphabet={alphabet}
           guessLetter={guessLetter}

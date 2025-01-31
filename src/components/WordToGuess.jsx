@@ -1,9 +1,11 @@
 export function WordToGuess({ letters, usedLetters }) {
-  const letterElements = letters.map((letter, index) => (
-    <span className="word-letter" key={index}>
-      {letter.toUpperCase()}
-    </span>
-  ));
+  const letterElements = letters.map((l, index) => {
+    return (
+      <span className="word-letter" key={index}>
+        {usedLetters.includes(l) ? l.toUpperCase() : ""}
+      </span>
+    );
+  });
 
   return (
     <>
