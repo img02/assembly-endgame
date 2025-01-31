@@ -37,14 +37,31 @@ header > p {
 
 section.game-status {
   background-color: #10a95b;
-  min-width: 350px;
+  min-width: 450px;
   text-align: center;
   border-radius: 4px;
+  margin-bottom: 3.5rem;
 }
 section.game-status > h2 {
-  margin: 10px 0 0 0;
+  margin: 4px 0 0 0;
 }
 
 section.game-status > p {
-  margin-top: 6px;
+  margin: 4px 0 8px 0;
+}
+
+#lives-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 400px;
+  justify-content: center;
+
+  margin-bottom: 3.5rem;
+}
+
+#lives-div > span {
+  margin: 1.5px;
+  border-radius: 3px;
+  padding: 4.5px;
 }

@@ -6,8 +6,7 @@ import { GuessInput } from "./components/GuessInput";
 import { Status } from "./components/Status";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const gameStatus = "win";
   return (
     <>
       <main>
@@ -19,7 +18,7 @@ function App() {
           </p>
         </header>
 
-        <Status />
+        {gameStatus !== "playing" ? <Status gameStatus={gameStatus} /> : null}
         <Lives />
         <WordToGuess />
         <GuessInput />
