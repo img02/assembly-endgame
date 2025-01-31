@@ -35,11 +35,18 @@ header > p {
 }
 
 section.game-status {
-  background-color: #10a95b;
   min-width: 450px;
   text-align: center;
   border-radius: 4px;
   margin-bottom: 3.5rem;
+  min-height: 100px;
+}
+
+section.game-status.won {
+  background-color: #10a95b;
+}
+section.game-status.lost {
+  background-color: #ba2a2a;
 }
 
 /* game status */
@@ -67,6 +74,21 @@ section.game-status > p {
   margin: 1.5px;
   border-radius: 3px;
   padding: 4.5px;
+  position: relative;
+}
+
+#lives-div > span.lost::before {
+  content: "💀";
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: 0.85rem;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 /* word to guess*/

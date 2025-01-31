@@ -1,10 +1,14 @@
 import { languages } from "../assets/languages";
 
-export function Lives() {
-  const languageElements = languages.map((l) => {
+export function Lives({ wrongGuessCount }) {
+  const languageElements = languages.map((l, index) => {
     const style = { backgroundColor: l.backgroundColor, color: l.color };
     return (
-      <span style={style} key={l.name}>
+      <span
+        style={style}
+        key={l.name}
+        className={index < wrongGuessCount ? "lost" : ""}
+      >
         {l.name}
       </span>
     );

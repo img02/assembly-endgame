@@ -1,11 +1,23 @@
-export function Status({ gameStatus }) {
-  const style = {
-    backgroundColor: gameStatus === "win" ? "#10a95b" : "#BA2A2A",
-  };
+import { clsx } from "clsx";
+export function Status({ isGameWon, isGameLost, isGameOver }) {
+  const classes = clsx(isGameWon && "won", isGameLost && "lost", "game-status");
+
+  const title = isGameWon ? "You win!" : isGameLost ? "Game over!" : "";
+
+  const text = isGameWon
+    ? "Well Done! 🎉"
+    : isGameLost
+    ? "You Lost Better start learning Assembly 😭"
+    : "";
+
   return (
-    <section className="game-status" style={style}>
-      <h2>You Won / Lost!</h2>
-      <p>You won! - You lose!</p>
+    <section className={classes}>
+      {isGameOver ? (
+        <>
+          <h2>{title}</h2>
+          <p>{text}</p>
+        </>
+      ) : null}
     </section>
   );
 }
