@@ -6,12 +6,20 @@ import { Keyboard } from "./components/Keyboard";
 import { Status } from "./components/Status";
 
 function App() {
+  // state values
   const [word, setWord] = useState("react");
   const [usedLetters, setUsedLetters] = useState([]);
 
+  // derived values
+  const wrongGuessCount = usedLetters.reduce(
+    (wrongCount, currLetter) =>
+      word.includes(currLetter) ? wrongCount : wrongCount + 1,
+    0
+  );
+
+  // static values
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   const gameStatus = "win";
-  console.log(usedLetters);
 
   function guessLetter(letter) {
     //check if letter already guessed
