@@ -6,7 +6,7 @@ main {
   justify-content: center;
   align-items: center;
 
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #f9f4da;
 }
 
@@ -14,7 +14,6 @@ main {
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   min-height: 100vh;
   margin: 0;
 }
@@ -25,12 +24,12 @@ header {
 
 header > h1,
 section.game-status > h2 {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 500;
 }
 
 header > p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   max-width: 350px;
   color: #8e8e8e;
 }
@@ -42,19 +41,23 @@ section.game-status {
   border-radius: 4px;
   margin-bottom: 3.5rem;
 }
+
+/* game status */
 section.game-status > h2 {
   margin: 4px 0 0 0;
+  font-size: 2.2rem;
 }
 
 section.game-status > p {
   margin: 4px 0 8px 0;
 }
 
+/* lives / langauges */
 #lives-div {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  max-width: 400px;
+  max-width: 460px;
   justify-content: center;
 
   margin-bottom: 3.5rem;
@@ -64,4 +67,69 @@ section.game-status > p {
   margin: 1.5px;
   border-radius: 3px;
   padding: 4.5px;
+}
+
+/* word to guess*/
+
+#word-to-guess-div {
+  display: flex;
+  gap: 2px;
+}
+
+.word-letter {
+  display: flex;
+  width: 4rem;
+  height: 4rem;
+
+  background-color: #323232;
+  justify-content: center;
+  align-items: center;
+
+  border-bottom: 1px solid #f9f4da;
+
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* keyboard */
+
+#guess-input-div {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  max-width: 720px;
+  justify-content: center;
+  margin: 90px 0 40px 0;
+}
+
+.alphabet-button {
+  width: 4rem;
+  height: 4rem;
+  background-color: #fcba29;
+  padding: 6px;
+
+  border-radius: 4px;
+  border: 2px solid #d7d7d7;
+}
+
+/* new game btn*/
+button.new-game {
+  background-color: #11b5e5;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+  width: 225px;
+  height: 40px;
+  padding: 6px 12px;
+  display: block;
+  margin-inline: auto;
+
+  font-weight: 500;
+}
+
+button {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: "Hanken Grotesk", Arial, sans-serif;
+
+  cursor: pointer;
 }
