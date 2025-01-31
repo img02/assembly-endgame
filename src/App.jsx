@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import { Header } from "./components/Header";
 import { Lives } from "./components/Lives";
 import { WordToGuess } from "./components/WordToGuess";
 import { GuessInput } from "./components/GuessInput";
@@ -12,7 +11,14 @@ function App() {
   return (
     <>
       <main>
-        <Header />
+        <header>
+          <h1>Assembly: Endgame</h1>
+          <p>
+            Guess the word in under 8 attempts to keep the programming world
+            safe from Assembly!
+          </p>
+        </header>
+
         <Status />
         <Lives />
         <WordToGuess />
