@@ -11,17 +11,11 @@ function App() {
 
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   const gameStatus = "win";
+  console.log(usedLetters);
 
   function guessLetter(letter) {
-    console.log(letter);
     //check if letter already guessed
-    if (usedLetters.some((usedLetter) => usedLetter === letter)) return;
-
-    //if not, check if exists in word
-    if (word.some((l) => l === usedLetters)) {
-      //either convert word to an object with a 'found' bool
-      // or creat a new state called foundLetters to compare with.
-    }
+    if (usedLetters.includes(letter)) return;
 
     //if not, lose one life
 
@@ -51,6 +45,7 @@ function App() {
           alphabet={alphabet}
           guessLetter={guessLetter}
           usedLetters={usedLetters}
+          word={word}
         />
         <button className="new-game">New Game</button>
       </main>

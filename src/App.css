@@ -112,6 +112,14 @@ section.game-status > p {
   border: 2px solid #d7d7d7;
 }
 
+.alphabet-button.wrong {
+  background-color: #ec5d49;
+}
+
+.alphabet-button.correct {
+  background-color: #10a95b;
+}
+
 /* new game btn*/
 button.new-game {
   background-color: #11b5e5;
