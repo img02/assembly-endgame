@@ -1,6 +1,12 @@
 import { clsx } from "clsx";
 
-export function Keyboard({ alphabet, guessLetter, usedLetters, word }) {
+export function Keyboard({
+  alphabet,
+  guessLetter,
+  usedLetters,
+  word,
+  isGameOver,
+}) {
   const keyboardElements = alphabet.split("").map((a) => {
     const letterUsed = usedLetters.includes(a);
     const existsInWord = word.includes(a);
@@ -14,7 +20,14 @@ export function Keyboard({ alphabet, guessLetter, usedLetters, word }) {
     );
 
     return (
-      <button className={classes} key={a} onClick={() => guessLetter(a)}>
+      <button
+        className={classes}
+        key={a}
+        disabled={isGameOver}
+        aria-disabled={usedLetters.includes(a)}
+        aria-label={`Letter ${a}`}
+        onClick={() => guessLetter(a)}
+      >
         {a.toUpperCase()}
       </button>
     );

@@ -13,7 +13,6 @@ export function Status({
   const lastGuessedLetter = usedLetters[usedLetters.length - 1];
   const isLastGuessIncorrect =
     lastGuessedLetter && !word.includes(lastGuessedLetter);
-  console.log(isLastGuessIncorrect);
 
   const classes = clsx(
     isGameWon && "won",
@@ -52,7 +51,7 @@ export function Status({
   }
 
   return (
-    <section className={classes}>
+    <section aria-live="polite" role="status" className={classes}>
       {isGameOver ? GameOver() : FarewellLanguage()}
     </section>
   );
