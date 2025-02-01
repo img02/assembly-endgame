@@ -1,8 +1,14 @@
+import { clsx } from "clsx";
 export function WordToGuess({ letters, usedLetters, isGameLost }) {
   const letterElements = letters.map((l, index) => {
+    const correctLetter = usedLetters.includes(l);
+    const classes = clsx(
+      isGameLost && !correctLetter && "missed-letter",
+      "word-letter"
+    );
     return (
-      <span className="word-letter" key={index}>
-        {usedLetters.includes(l) || isGameLost ? l.toUpperCase() : ""}
+      <span className={classes} key={index}>
+        {correctLetter || isGameLost ? l.toUpperCase() : ""}
       </span>
     );
   });

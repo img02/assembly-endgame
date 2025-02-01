@@ -6,6 +6,7 @@ import { Keyboard } from "./components/Keyboard";
 import { Status } from "./components/Status";
 import { languages } from "./assets/languages";
 import { words } from "./assets/words";
+import Confetti from "react-confetti";
 
 function App() {
   // state values
@@ -49,6 +50,7 @@ function App() {
 
   return (
     <>
+      {isGameWon ? <Confetti /> : null}
       <main>
         <header>
           <h1>Assembly: Endgame</h1>

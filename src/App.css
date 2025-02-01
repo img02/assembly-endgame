@@ -126,6 +126,10 @@ section.game-status > p.farewell-text {
   font-weight: 700;
 }
 
+.word-letter.missed-letter {
+  color: #ec5d49;
+}
+
 /* keyboard */
 
 #guess-input-div {
