@@ -27,16 +27,9 @@ function App() {
   const isGameLost = wrongGuessCount >= languages.length - 1;
   const isGameOver = isGameLost || isGameWon;
 
-  console.log(isGameOver);
   function guessLetter(letter) {
     //check if letter already guessed
     if (usedLetters.includes(letter)) return;
-
-    //if not, lose one life
-
-    //if yes, show found letter in wordToGuess
-
-    //on rerender, should update / check game state
 
     //finally, add to usedLetters
     setUsedLetters((prev) => [...prev, letter]);
@@ -57,6 +50,10 @@ function App() {
           isGameWon={isGameWon}
           isGameLost={isGameLost}
           isGameOver={isGameOver}
+          languages={languages}
+          wrongGuessCount={wrongGuessCount}
+          word={word}
+          usedLetters={usedLetters}
         />
         <Lives wrongGuessCount={wrongGuessCount} />
         <WordToGuess letters={word.split("")} usedLetters={usedLetters} />

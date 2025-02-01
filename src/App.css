@@ -35,8 +35,11 @@ header > p {
 }
 
 section.game-status {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-width: 450px;
-  text-align: center;
   border-radius: 4px;
   margin-bottom: 3.5rem;
   min-height: 100px;
@@ -49,6 +52,10 @@ section.game-status.lost {
   background-color: #ba2a2a;
 }
 
+section.game-status.farewell {
+  background-color: #7a5ea7;
+}
+
 /* game status */
 section.game-status > h2 {
   margin: 4px 0 0 0;
@@ -57,6 +64,12 @@ section.game-status > h2 {
 
 section.game-status > p {
   margin: 4px 0 8px 0;
+}
+
+section.game-status > p.farewell-text {
+  margin: 4px 0 8px 0;
+  font-style: italic;
+  font-size: 1.3rem;
 }
 
 /* lives / langauges */
